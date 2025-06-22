@@ -9,9 +9,8 @@ class SplashScreen extends StatefulWidget {
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
-
 class _SplashScreenState extends State<SplashScreen> {
-   @override
+  @override
   void initState() {
     super.initState();
 
@@ -23,6 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
       );
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,11 +38,17 @@ class _SplashScreenState extends State<SplashScreen> {
                 children: [
                   TextSpan(
                     text: 'Kodein ',
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.black),
+                    style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black),
                   ),
                   TextSpan(
                     text: 'Note',
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Color(0xFFFF5B13)),
+                    style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.indigoAccent),
                   ),
                 ],
               ),

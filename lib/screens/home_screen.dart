@@ -55,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   TextSpan(
                     text: "Notes",
                     style: TextStyle(
-                        color: Colors.deepOrange,
+                        color: Colors.indigoAccent,
                         fontSize: 20,
                         fontWeight: FontWeight.bold),
                   ),

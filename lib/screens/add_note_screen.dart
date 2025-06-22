@@ -173,9 +173,8 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                 image: _selectedImage,
               );
 
-              final test = await _noteService.insertNote(newNote);
+              await _noteService.insertNote(newNote);
 
-              print(test); // simpan ke database
               Navigator.pop(
                   context, true); // kembali ke HomeScreen dengan sinyal refresh
               // Kembalikan objek Note ke halaman sebelumnya
