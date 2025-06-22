@@ -27,7 +27,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
           onPressed: () {
             Navigator.pop(context); // <-- Kembali ke screen sebelumnya
           },
-          icon: Icon(Icons.arrow_back, color: Colors.deepOrange),
+          icon: Icon(Icons.arrow_back, color: Colors.indigoAccent),
         ),
         title: const Text(
           "Add Note",
@@ -62,7 +62,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                     borderSide: const BorderSide(
-                        color: Colors.deepOrangeAccent, width: 1.0),
+                        color: Colors.indigoAccent, width: 1.0),
                   ),
                 ),
               ),
@@ -93,7 +93,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                     borderSide: const BorderSide(
-                        color: Colors.deepOrangeAccent, width: 1.0),
+                        color: Colors.indigoAccent, width: 1.0),
                   ),
                 ),
               ),
@@ -123,7 +123,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                         border: Border.all(
                             width: 1.5,
                             color: _selectedImage == '$index.png'
-                                ? Colors.deepOrangeAccent
+                                ? Colors.indigoAccent
                                 : const Color(0xffc5c5c5)),
                       ),
                       child: Column(
@@ -158,7 +158,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(
                     content: Text('Judul dan isi catatan tidak boleh kosong.'),
-                    backgroundColor: Colors.redAccent,
+                    backgroundColor: Colors.indigo,
                   ),
                 );
                 return;
@@ -180,7 +180,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
               // Kembalikan objek Note ke halaman sebelumnya
             },
             style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.deepOrange,
+              backgroundColor: Colors.indigoAccent,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8)),
             ),

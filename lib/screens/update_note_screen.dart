@@ -6,7 +6,6 @@ class UpdateNoteScreen extends StatefulWidget {
   final Note note; // <-- tambahkan
 
   const UpdateNoteScreen({super.key, required this.note});
-  
 
   @override
   State<UpdateNoteScreen> createState() => _UpdateNoteScreenState();
@@ -21,7 +20,6 @@ class _UpdateNoteScreenState extends State<UpdateNoteScreen> {
 
   String _selectedImage = "0.png";
 
-
   @override
   void initState() {
     super.initState();
@@ -29,7 +27,6 @@ class _UpdateNoteScreenState extends State<UpdateNoteScreen> {
     _contentController.text = widget.note.content;
     _selectedImage = widget.note.image;
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +41,8 @@ class _UpdateNoteScreenState extends State<UpdateNoteScreen> {
         ),
         title: const Text(
           "Update Note",
-          style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
+          style: TextStyle(
+              color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
         ),
       ),
       backgroundColor: Colors.white,
@@ -64,15 +62,18 @@ class _UpdateNoteScreenState extends State<UpdateNoteScreen> {
                 focusNode: _titleFocusNode,
                 style: const TextStyle(fontSize: 16, color: Colors.black),
                 decoration: InputDecoration(
-                  contentPadding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+                  contentPadding:
+                      const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
                   hintText: "Note Title",
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
-                    borderSide: const BorderSide(color: Color(0xffc5c5c5), width: 1.0),
+                    borderSide:
+                        const BorderSide(color: Color(0xffc5c5c5), width: 1.0),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
-                    borderSide: const BorderSide(color: Colors.deepOrangeAccent, width: 1.0),
+                    borderSide: const BorderSide(
+                        color: Colors.indigoAccent, width: 1.0),
                   ),
                 ),
               ),
@@ -93,15 +94,18 @@ class _UpdateNoteScreenState extends State<UpdateNoteScreen> {
                 maxLines: 3,
                 style: const TextStyle(fontSize: 16, color: Colors.black),
                 decoration: InputDecoration(
-                  contentPadding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+                  contentPadding:
+                      const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
                   hintText: "Note Content",
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
-                    borderSide: const BorderSide(color: Color(0xffc5c5c5), width: 1.0),
+                    borderSide:
+                        const BorderSide(color: Color(0xffc5c5c5), width: 1.0),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
-                    borderSide: const BorderSide(color: Colors.deepOrangeAccent, width: 1.0),
+                    borderSide: const BorderSide(
+                        color: Colors.indigoAccent, width: 1.0),
                   ),
                 ),
               ),
@@ -131,7 +135,7 @@ class _UpdateNoteScreenState extends State<UpdateNoteScreen> {
                         border: Border.all(
                           width: 1.5,
                           color: _selectedImage == '$index.png'
-                              ? Colors.deepOrangeAccent
+                              ? Colors.indigoAccent
                               : const Color(0xffc5c5c5),
                         ),
                       ),
@@ -155,38 +159,42 @@ class _UpdateNoteScreenState extends State<UpdateNoteScreen> {
           width: double.infinity,
           height: 50,
           child: ElevatedButton(
-           onPressed: () async {
-  final title = _titleController.text.trim();
-  final content = _contentController.text.trim();
+            onPressed: () async {
+              final title = _titleController.text.trim();
+              final content = _contentController.text.trim();
 
-  if (title.isEmpty || content.isEmpty) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text('Judul dan isi catatan tidak boleh kosong.'),
-        backgroundColor: Colors.redAccent,
-      ),
-    );
-    return;
-  }
+              if (title.isEmpty || content.isEmpty) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text('Judul dan isi catatan tidak boleh kosong.'),
+                    backgroundColor: Colors.indigo,
+                  ),
+                );
+                return;
+              }
 
-  final updatedNote = Note(
-    id: widget.note.id,
-    title: title,
-    content: content,
-    image: _selectedImage,
-    dateTime: DateTime.now().toString(),
-  );
+              final updatedNote = Note(
+                id: widget.note.id,
+                title: title,
+                content: content,
+                image: _selectedImage,
+                dateTime: DateTime.now().toString(),
+              );
 
-  await _noteService.updateNote(updatedNote); // simpan ke database
-  Navigator.pop(context, true); // kirim sinyal bahwa update selesai
-},
+              await _noteService.updateNote(updatedNote); // simpan ke database
+              Navigator.pop(context, true); // kirim sinyal bahwa update selesai
+            },
             style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.deepOrange,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+              backgroundColor: Colors.indigoAccent,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8)),
             ),
             child: const Text(
               'Update',
-              style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold),
             ),
           ),
         ),

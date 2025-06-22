@@ -23,7 +23,7 @@ final NoteService _noteService = NoteService();
           onPressed: () {
             Navigator.pop(context); // <-- Go back to the previous screen
           },
-          icon: Icon(Icons.arrow_back, color: Colors.deepOrange),
+          icon: Icon(Icons.arrow_back, color: Colors.indigoAccent),
         ),
         title: const Text(
           "Note Details",
@@ -87,7 +87,7 @@ Expanded(
   }
 },
     style: ElevatedButton.styleFrom(
-      backgroundColor: Colors.deepOrange,
+      backgroundColor: Colors.indigoAccent,
       padding: const EdgeInsets.symmetric(vertical: 14),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
     ),
@@ -117,7 +117,7 @@ Expanded(
           onPressed: () => Navigator.pop(context, true),
             child: const Text(
             'Delete',
-            style: TextStyle(color: Colors.red),
+            style: TextStyle(color: Colors.indigoAccent),
           ),
         ),
       ],
@@ -131,7 +131,7 @@ Expanded(
   }
 },
     style: ElevatedButton.styleFrom(
-      backgroundColor: Colors.redAccent,
+      backgroundColor: Colors.indigoAccent,
       padding: const EdgeInsets.symmetric(vertical: 14),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
     ),

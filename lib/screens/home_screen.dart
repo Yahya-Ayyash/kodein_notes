@@ -100,7 +100,7 @@ class _HomeScreenState extends State<HomeScreen> {
             _loadNotes(); // refresh data dari database
           }
         },
-        backgroundColor: Colors.deepOrange,
+        backgroundColor: Colors.indigoAccent,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
         child: Icon(Icons.add, color: Colors.white),
       ),
